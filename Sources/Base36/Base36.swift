@@ -14,7 +14,7 @@ extension Data {
     /// - Returns: Base-36 encoded data.
     ///
     /// - Warning: **DO NOT** use this function to process large size data, it may cause memory leaks when data is too large.
-    func base36EncodedString() -> String {
+    public func base36EncodedString() -> String {
         var value = self.reduce(UInt128(0)) { ($0 << 8) | UInt128($1) }
         guard value > 0 else { return "0" }
 
@@ -37,7 +37,7 @@ extension Data {
 
     /// Decode data from Base-36 encoded string.
     /// - Parameter string: Base-36 encoded string.
-    init?(base36Encoded string: String) {
+    public init?(base36Encoded string: String) {
         var value = UInt128(0)
         let base = UInt128(36)
 
