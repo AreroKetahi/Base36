@@ -5,12 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "Base36",
+    platforms: [
+        .iOS(.v18), .macOS(.v15), .tvOS(.v18), .visionOS(.v2), .watchOS(.v11),
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Base36",
             targets: ["Base36"]
-        ),
+        )
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
